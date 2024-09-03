@@ -11,9 +11,7 @@ function Navigation() {
       <Link href="/cart" className="hover:font-semibold">
         Cart
       </Link>
-      <Link href="/products" className="hover:font-semibold">
-        Product
-      </Link>
+     
     </nav>
   );
 }
