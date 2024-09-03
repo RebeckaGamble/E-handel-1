@@ -1,12 +1,12 @@
-import Header from "./components/header/Header";
+import Hero from "./components/header/Hero";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       <div>
-        <Header />
+        <Hero />
       </div>
-      
+
     </main>
   );
 }

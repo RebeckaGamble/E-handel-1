@@ -1,15 +1,33 @@
-import React from 'react'
+import React from "react";
+import Navigation from "./Navigation";
+import Link from "next/link";
+import { GiClothes } from "react-icons/gi";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 function Header() {
   return (
-    <div className="flex flex-row gap-6 justify-between text-gray-900 w-full bg-gray-100">
-        <p>Logo</p>
+    <div className="h-[60px] text-gray-900 w-full bg-gray-50">
+      <div className="flex flex-row h-full items-center justify-between px-4 align-center">
+        <Link href="/" className="flex flex-row items-center gap-1">
+          <GiClothes size={30} />{" "}
+          <h3 class="text-xl font-bold bg-gradient-to-r from-black via-gray-600 to-gray-400 bg-clip-text text-transparent">
+            GroupOne
+          </h3>
+        </Link>
+
         <div>
-            {/**navigation goes here */}
+          <Navigation />
         </div>
-        <p>Cart</p>
+        <Link href="/cart">
+          <HiOutlineShoppingCart
+            size={20}
+            color="black"
+            className="fill-white"
+          />
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
