@@ -10,7 +10,7 @@ function ToggleButton({ btnText, description }) {
   return (
     <div>
       <button className="text-blue-900" onClick={handleClick}>{btnText}</button>
-      {isOpen && <p>{description}</p>}
+      {isOpen && <p className="max-w-[500px]">{description}</p>}
     </div>
   );
 }
