@@ -1,4 +1,5 @@
 import ProductData from "./components/data/Productdata";
+import Footer from "./components/footer/Footer";
 import Hero from "./components/header/Hero";
 
 export default function Home() {
@@ -9,6 +10,9 @@ export default function Home() {
       </div>
       <div>
         <ProductData />
+      </div>
+      <div>
+        <Footer />
       </div>
     </main>
   );
