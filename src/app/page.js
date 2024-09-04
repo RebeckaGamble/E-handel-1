@@ -1,5 +1,7 @@
 import ProductData from "./components/data/Productdata";
 import Hero from "./components/header/Hero";
+import Footer from "./components/footer/Footer";
+
 
 export default function Home() {
   return (
@@ -10,6 +12,7 @@ export default function Home() {
       <div>
         <ProductData />
       </div>
+      <Footer/>
     </main>
   );
 }

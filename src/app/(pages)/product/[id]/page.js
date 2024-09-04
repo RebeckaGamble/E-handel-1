@@ -53,8 +53,14 @@ async function singleProductPage({ params }) {
               <span className="pl-0.5"> ({product.rating.count}) </span>
             </p>
           </div>
+          {/*
           <div className="pt-6 flex justify-start w-full ">
             <AddToCartBtn />
+          </div>
+          */}
+          <div className="pt-6 flex justify-start w-full ">
+            {/* Skicka produkten som en prop till AddToCartBtn */}
+            <AddToCartBtn product={product} />
           </div>
         </div>
       </div>
