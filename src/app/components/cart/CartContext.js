@@ -13,7 +13,7 @@ export function useCart() {
 // CartProvider som omsluter komponenter som behöver tillgång till cart state
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
-  const [favorite, setFavorite] = useState([])
+  const [favorite, setFavorite] = useState([]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -40,14 +40,15 @@ export function CartProvider({ children }) {
 
  const addToFavorite = (product) => {
     setFavorite((prevFav) => {
-      const favExist = prevFav.find((item) => item.id === product.id);
-      if (favExist) {
-        return prevFav.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
+      const isFavorite = prevFav.some((item) => item.id === product.id);
+      if (!isFavorite) {  
       return [...prevFav, { ...product, quantity: 1 }];
+      }
+      return prevFav;
     });
+  };
+  const removeFromFavorite = (product) => {
+    setFavorite((prevFav) => prevFav.filter((item) => item.id !== product));
   };
   return (
     <CartContext.Provider
@@ -58,6 +59,7 @@ export function CartProvider({ children }) {
         clearCart,
         addToFavorite,
         favorite,
+        removeFromFavorite
       }}
     >
       {children}

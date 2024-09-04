@@ -1,9 +1,14 @@
 'use client';
 import React from "react";
 import { useCart } from "@/app/components/cart/CartContext";
+import AddToCartBtn from "../product/AddToCartBtn";
 
 export default function Favorite() {
-  const { favorite } = useCart();
+  const { favorite, removeFromFavorite } = useCart();
+
+const handleRemoveFromFavorite = (product) => {
+    removeFromFavorite(product)
+}
   return (
     <div>
       {favorite.length > 0 ? (
@@ -21,6 +26,13 @@ export default function Favorite() {
                   <p>Price: {item.price} £</p>
                 </div>
               </div>
+              <AddToCartBtn product={item}/>
+              <button
+                onClick={() => handleRemoveFromFavorite(item.id)}
+                className="bg-red-500 rounden-full text-white px-4 py-2 rounded hover:bg-red-600"
+              >
+                Remove from favorite
+              </button>
             </div>
           ))}
         </div>
