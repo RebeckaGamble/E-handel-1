@@ -14,6 +14,22 @@ export function useCart() {
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [favorite, setFavorite] = useState([])
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const email = localStorage.getItem('currentUser');
+    if (email) {
+      setCurrentUser(email);
+      const storedCart = JSON.parse(localStorage.getItem(`${email}_cart`)) || [];
+      setCartItems(storedCart);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem(`${currentUser}_cart`, JSON.stringify(cartItems));
+    }
+  }, [cartItems, currentUser]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -56,6 +72,21 @@ export function CartProvider({ children }) {
       return prevFav;
     });
   };
+
+
+   // Login
+   const login = (email) => {
+    localStorage.setItem('currentUser', email);
+    setCurrentUser(email);
+  };
+
+  // Logout
+  const logout = () => {
+    localStorage.removeItem('currentUser');
+    setCurrentUser(null);
+    clearCart();
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -65,6 +96,9 @@ export function CartProvider({ children }) {
         clearCart,
         addToFavorite,
         favorite,
+        currentUser,
+        login,
+        logout,
       }}
     >
       {children}
