@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import { CartProvider } from "./components/cart/CartContext"; // importera CartContext för att kunna använda det
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider> {/* wrappar in CartProvider runt layout */}
+          <div className="min-h-screen flex flex-col justify-between">
+
+          <Header />
+          {children}
+          <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );

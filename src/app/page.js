@@ -4,16 +4,9 @@ import Hero from "./components/header/Hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col max-w-[90rem] mx-auto">
-      <div>
-        <Hero />
-      </div>
-      <div>
-        <ProductData />
-      </div>
-      <div>
-        <Footer />
-      </div>
+    <main className="flex min-h-screen pt-[60px] flex-col max-w-[90rem] mx-auto">
+      <Hero />
+      <ProductData />
     </main>
   );
 }
