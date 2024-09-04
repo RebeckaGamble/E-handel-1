@@ -11,6 +11,22 @@ function Footer() {
           </Link>
           -<p className="italic font-semibold">E-commerce</p>
         </div>
+
+        <div className="flex flex-row between">
+          <p>© 2024 Shopping Store</p>
+          <ul className="flex flex-row">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#">Terms of Service</a>
+            </li>
+            <li>
+              <a href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
         <div className="text-sm pt-6 sm:pt-0">
           <h3 className="font-bold pb-2">Participants</h3>
           <ul className="grid grid-cols-2 items-center gap-3 italic font-light">
