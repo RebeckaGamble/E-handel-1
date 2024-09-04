@@ -31,7 +31,7 @@ function Cartpage() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-20 h-20 object-cover rounded"
+                    className="w-20 h-20 object-contain rounded"
                   />
                   <div>
                     <p className="font-semibold">{item.title}</p>

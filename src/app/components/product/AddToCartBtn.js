@@ -13,8 +13,8 @@ function AddToCartBtn({ product }) {
   };
 
   return (
-    <button onClick={handleAddToCart} className="uppercase tracking-wider font-semibold text-[18px] bg-blue-900 text-white rounded-full w-full justify-center py-2 flex flex-row items-center gap-1 hover:py-2.5 hover:mt-[-4px] ">
-      <TbShoppingBagPlus /> Add to cart{" "}
+    <button onClick={handleAddToCart} className="uppercase tracking-wider font-semibold text-[18px] bg-blue-900 text-white rounded-full w-full justify-center py-2 flex flex-row items-center gap-3 hover:py-2.5 hover:mt-[-4px] ">
+      <TbShoppingBagPlus size={24} /> Add to cart{" "}
     </button>
   );
 }

@@ -7,12 +7,12 @@ import { FaStar } from "react-icons/fa";
 /*receives the arr of product obj:s as prop  */
 function ProductCard({ products }) {
   return (
-    <div className="flex flex-wrap gap-x-2 justify-around gap-y-4">
+    <div className="flex flex-wrap gap-x-2 justify-around 2xl:justify-between gap-y-4">
       {/**map out products and create a card for each product */}
       {products.map((product) => (
         <div
           key={product.id}
-          className="flex flex-col relative  rounded-xl text-black w-[300px]"
+          className="flex flex-col relative rounded-xl text-black w-[300px]"
         >
           <Link href={`/product/${product.id}`}>
             <div className="w-full pt-10 h-[300px]">

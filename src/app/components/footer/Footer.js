@@ -11,10 +11,10 @@ function Footer() {
         <h1 className='font-bold'>GroupOne </h1> 
         </Link>
         -
-        <p className='italic font-semibold'> E-handel Fwbu</p>
+        <p className='italic font-semibold'>E-commerce</p>
       </div>
       <div className='text-sm pt-6 sm:pt-0'>
-        <h3 className='font-bold pb-2'>Deltagare:</h3>
+        <h3 className='font-bold pb-2'>Participants</h3>
         <ul className='grid grid-cols-2 items-center gap-3 italic font-light'>
           <li>Rebecka Gamble</li>
           <li>Ahmed</li>
