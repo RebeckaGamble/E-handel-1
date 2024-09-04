@@ -17,33 +17,41 @@ function Header() {
           <h3 className="text-xl font-bold bg-gradient-to-b from-black via-gray-600 to-gray-900 bg-clip-text text-transparent">
             GroupOne
           </h3>
-        </Link>
-        <div>
-          <Navigation />
-        </div>
-        <Link href="/favorites">
-          <FaRegHeart />
-        </Link>
-        <Link href="/cart">
-          <BiShoppingBag size={20} color="black" className="hover:color-black" />
-        </Link>
-        {currentUser ? (
-          <div className="flex items-center gap-4">
-            <span className='italic mr-2'>Inloggad som {currentUser}</span>
-            <button
-              onClick={logout}
-              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-            >
-              Logga ut
-            </button>
-          </div>
-        ) : (
-          <Link href="/login">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-              Login/Register
-            </button>
-          </Link>
-        )}
+        </Link>  
+            <div>
+              <Navigation />
+            </div>
+            <div className='flex flex-row items center gap-5'>
+              <div className='flex flex-row items-center gap-5'>
+                <Link href="/favorites">
+                  <FaRegHeart />
+                </Link>
+                <Link href="/cart">
+                  <BiShoppingBag size={20} color="black" className="hover:color-black" />
+                </Link>
+              </div>
+              {currentUser ? (
+                <div className="flex items-center gap-4">
+                  <Link href="/cart">
+                    <p className='italic mr-2 text-blue-400 hover:underline'>
+                      Inloggad som {currentUser}
+                    </p>
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                  >
+                    Logga ut
+                  </button>
+                </div>
+              ) : (
+                <Link href="/login">
+                  <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Login/Register
+                  </button>
+                </Link>
+              )}
+            </div>
       </div>
     </div>
   );
