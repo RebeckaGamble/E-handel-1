@@ -18,7 +18,7 @@ function Cartpage() {
   }, 0);
 
   return (
-      <div className="w-full h-full p-10">
+      <div className="w-full max-w-[90rem] mx-auto 2xl:px-0 h-full p-10">
         <h2 className="text-2xl mt-10 font-bold mb-6">Your Cart</h2>
         {cartItems.length > 0 ? (
           <>

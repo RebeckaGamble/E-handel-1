@@ -4,7 +4,7 @@ import React from "react";
 function Hero() {
   return (
     <div className="relative flex items-center justify-center">
-      <div className="w-full flex h-auto max-h-[800px]  ">
+      <div className="w-full flex h-auto max-h-[800px]">
         <Image
           src="/images/hero2.jpg"
           alt="group one hero"

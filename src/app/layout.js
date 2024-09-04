@@ -16,9 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <CartProvider> {/* wrappar in CartProvider runt layout */}
+          <div className="min-h-screen flex flex-col justify-between">
+
           <Header />
           {children}
           <Footer />
+          </div>
         </CartProvider>
       </body>
     </html>
