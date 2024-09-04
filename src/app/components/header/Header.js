@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "./Navigation";
 import Link from "next/link";
 import { BiShoppingBag } from "react-icons/bi";
+import { FaRegHeart } from "react-icons/fa";
 
 function Header() {
   return (
@@ -15,6 +16,9 @@ function Header() {
         <div>
           <Navigation />
         </div>
+        <Link href="/favorites">
+        <FaRegHeart/>
+        </Link>
         <Link href="/cart" >
           <BiShoppingBag 
             size={20}

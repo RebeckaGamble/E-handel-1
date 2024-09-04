@@ -1,6 +1,8 @@
 import AddToCartBtn from "@/app/components/product/AddToCartBtn";
 import ToggleButton from "@/app/components/product/ToggleButton";
+import { FaRegHeart } from "react-icons/fa";
 import React from "react";
+import FavoriteBtn from "@/app/components/favorite/FavoriteBtn";
 
 /**fetch product by id  */
 async function fetchProduct(id) {
@@ -35,6 +37,9 @@ async function singleProductPage({ params }) {
       <div className="max-w-[90rem] px-4 2xl:px-0 relative pb-[60px] pt-[120px] flex flex-col 2xl:flex-row mx-auto items-center justify-center 2xl:justify-between 2xl:items-end">
         <div className="max-w-[800px] 2xl:max-w-[600px]">
           <img src={product.image} alt={product.title} />
+        </div>
+        <div>
+    <FavoriteBtn product={product}/>
         </div>
         <div className="flex flex-col max-w-[700px] 2xl:max-w-[600px]">
           <div className="">
