@@ -14,23 +14,6 @@ export function useCart() {
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [favorite, setFavorite] = useState([])
-  const [currentUser, setCurrentUser] = useState(null);
-
-  //useEffect
-  useEffect(() => {
-    const email = localStorage.getItem('currentUser');
-    if (email) {
-      setCurrentUser(email);
-      const storedCart = JSON.parse(localStorage.getItem(`${email}_cart`)) || [];
-      setCartItems(storedCart);
-    }
-  }, []);
-
-  useEffect (() => {
-    if(currentUser) {
-      localStorage.setItem(`${currentUser}_cart`, JSON.stringify(cartItems));
-    }
-  }, [cartItems, currentUser]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -66,29 +49,13 @@ export function CartProvider({ children }) {
 
  const addToFavorite = (product) => {
     setFavorite((prevFav) => {
-      const favExist = prevFav.find((item) => item.id === product.id);
-      if (favExist) {
-        return prevFav.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
+      const isFavorite = prevFav.some((item) => item.id === product.id);
+      if (!isFavorite) {  
       return [...prevFav, { ...product, quantity: 1 }];
+      }
+      return prevFav;
     });
   };
-
-  //login
-  const login = (email) => {
-    localStorage.setItem('currentUser', email);
-    setCurrentUser(email);
-  };
-
-  //logout
-  const logout = () =>{
-    localStorage.removeItem('currentUser');
-    setCurrentUser(null);
-    clearCart();
-  };
-
   return (
     <CartContext.Provider
       value={{
@@ -98,10 +65,6 @@ export function CartProvider({ children }) {
         clearCart,
         addToFavorite,
         favorite,
-        //extra values
-        currentUser,
-        login,
-        logout,
       }}
     >
       {children}
