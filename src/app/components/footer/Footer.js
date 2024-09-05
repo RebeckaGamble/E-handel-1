@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function Footer() {
   return (
@@ -12,17 +13,30 @@ function Footer() {
           -<p className="italic font-semibold">E-commerce</p>
         </div>
 
-        <div className="flex flex-row between">
-          <p>© 2024 Shopping Store</p>
-          <ul className="flex flex-row">
+        <div className="flex flex-col">
+          <p className="italic font-semibold">Social Media</p>
+          <ul className="flex flex-row py-2 justify-around items-center">
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#">
+                <Image
+                  src="/instagram-Icon.svg"
+                  width={36}
+                  height={36}
+                  alt="no image"
+                  priority
+                />
+              </a>
             </li>
             <li>
-              <a href="#">Terms of Service</a>
-            </li>
-            <li>
-              <a href="#contact">Contact Us</a>
+              <a href="#">
+                <Image
+                  src="/facebook-Icon.svg"
+                  width={42}
+                  height={42}
+                  alt="no image"
+                  priority
+                />
+              </a>
             </li>
           </ul>
         </div>
