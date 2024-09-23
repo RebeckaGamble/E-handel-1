@@ -94,11 +94,11 @@ function Cartpage() {
       </button>
       {currentUser ? (
         <button onClick={handleLogout} className="mt-4 ml-4 bg-red-500 text-white px-4 py-2 rounded">
-          Logga ut
+          Log out
         </button>
       ) : (
         <button onClick={handleLogin} className="mt-4 ml-4 bg-blue-500 text-white px-4 py-2 rounded">
-          Logga in
+          Log in
         </button>
       )}
       {isCheckoutOpen && <CheckoutModal onClose={() => setCheckoutOpen(false)} />}

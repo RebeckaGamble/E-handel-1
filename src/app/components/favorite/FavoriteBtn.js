@@ -1,21 +1,23 @@
-'use client';
-import React from 'react'
-import { FaRegHeart } from 'react-icons/fa';
+"use client";
+import React from "react";
+import { FaRegHeart } from "react-icons/fa";
 import { useCart } from "@/app/components/cart/CartContext";
 
-function FavoriteBtn({product}) {
-    const {addToFavorite} = useCart();
+function FavoriteBtn({ product, text }) {
+  const { addToFavorite } = useCart();
 
-const handleAddToFavorites = () => {
+  const handleAddToFavorites = () => {
     addToFavorite(product);
+  };
 
-
-}
   return (
-    <button onClick={handleAddToFavorites}>
-        <FaRegHeart/> Add to favorite
-    </button> 
-  )
+    <button
+      className="flex flex-row gap-1 items-center"
+      onClick={handleAddToFavorites}
+    >
+      <FaRegHeart /> <p>{text}</p>
+    </button>
+  );
 }
 
-export default FavoriteBtn
+export default FavoriteBtn;

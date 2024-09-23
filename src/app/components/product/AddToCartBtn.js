@@ -9,7 +9,7 @@ function AddToCartBtn({ product }) {
 
   const handleAddToCart = () => {
     addToCart(product);
-    window.alert(`${product.title} has been added to your cart!`)
+   // window.alert(`${product.title} has been added to your cart!`)
   };
 
   return (

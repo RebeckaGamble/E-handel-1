@@ -1,5 +1,4 @@
 import ProductData from "./components/data/Productdata";
-import Footer from "./components/footer/Footer";
 import Hero from "./components/header/Hero";
 
 export default function Home() {

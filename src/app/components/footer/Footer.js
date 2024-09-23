@@ -5,17 +5,17 @@ import Image from "next/image";
 function Footer() {
   return (
     <div className="flex items-center h-auto w-full bg-slate-700 text-white px-10 py-5">
-      <div className="flex justify-between w-full max-w-[90rem] mx-auto flex-col sm:flex-row">
-        <div className="flex flex-row gap-1.5">
+      <div className="flex justify-between w-full max-w-[90rem] mx-auto flex-col gap-6 sm:gap-0 sm:flex-row">
+        <div className="flex flex-row gap-1.5 text-[20px]">
           <Link href="/">
-            <h1 className="font-bold">GroupOne </h1>
+            <h1 className="font-bold ">GroupOne </h1>
           </Link>
           -<p className="italic font-semibold">E-commerce</p>
         </div>
 
         <div className="flex flex-col">
           <p className="italic font-semibold">Social Media</p>
-          <ul className="flex flex-row py-2 justify-around items-center">
+          <ul className="flex flex-row py-2 sm:justify-between items-center">
             <li>
               <a href="#">
                 <Image
@@ -41,7 +41,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="text-sm pt-6 sm:pt-0">
+        <div className=" sm:pt-0">
           <h3 className="font-bold pb-2">Participants</h3>
           <ul className="grid grid-cols-2 items-center gap-3 italic font-light">
             <li>Rebecka Gamble</li>

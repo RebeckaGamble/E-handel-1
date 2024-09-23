@@ -13,7 +13,7 @@ function Hero() {
           className="bg-cover bg-no-repeat bg-center w-full h-auto"
         />
       </div>
-      <h1 className="absolute top-[-14px] text-[7vh] text-center bg-gradient-to-b from-black via-gray-600 to-gray-900 bg-clip-text text-transparent">
+      <h1 className="absolute top-[-8px] md:top-[12px] xl:text-[8vh] text-[6vh] text-center bg-gradient-to-b from-black via-gray-600 to-gray-900 bg-clip-text text-transparent">
         GroupOne
       </h1>
     </div>

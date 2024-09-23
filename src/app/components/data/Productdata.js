@@ -1,34 +1,22 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ProductCard from "../product/ProductCard";
+import { useCart } from "../cart/CartContext";
+import SearchBar from "../header/SearchBar";
 
 function ProductData() {
-  /*states */
-  const [products, setProducts] = useState([]); //empty arr - to store fetched products
-
-  /*fetch data from fakestoreapi */
-  useEffect(() => {
-    async function getProducts() {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const result = await response.json();
-
-        setProducts(result); //update products state with result from api
-        //console.log("fetched products", result);
-      } catch (err) {
-        console.error("Error fetching products!", err);
-      }
-    }
-    getProducts();
-  }, []);
+  const { products, filteredProducts } = useCart();
 
   return (
-    <div className="px-4 2xl:px-0">
+    <div className="px-4 py-10 2xl:px-0">
+      <div className="flex justify-center py-4">
+        <SearchBar />
+      </div>
       <h3 className="text-blue-900 text-[24px] font-semibold my-8">
         Bestsellers{" "}
       </h3>
       {/**pass product state as prop */}
-      <ProductCard products={products} />
+      <ProductCard products={products} filteredProducts={filteredProducts} />
     </div>
   );
 }
